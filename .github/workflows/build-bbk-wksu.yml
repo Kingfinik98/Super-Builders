@@ -368,15 +368,8 @@ jobs:
         else
           cd "$KERNEL_COMMON"
 
-          # Wrap clang to strip -Werror — OEM Makefiles inject it everywhere,
-          # and system clang is stricter than the OEM's prebuilt
           REAL_CLANG=$(command -v clang)
-          cat > /tmp/clang-no-werror << WRAP
-          #!/bin/bash
-          args=()
-          for a in "\$@"; do [[ "\$a" == "-Werror" ]] || args+=("\$a"); done
-          exec "$REAL_CLANG" "\${args[@]}"
-          WRAP
+          printf '#!/bin/bash\nargs=()\nfor a in "$@"; do [[ "$a" == "-Werror" ]] || args+=("$a"); done\nexec "%s" "${args[@]}"\n' "$REAL_CLANG" > /tmp/clang-no-werror
           chmod +x /tmp/clang-no-werror
 
           make O=out ARCH=arm64 LLVM=1 \
