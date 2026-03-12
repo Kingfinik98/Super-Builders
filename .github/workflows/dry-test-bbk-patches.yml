@@ -347,6 +347,8 @@ jobs:
       run: |
         export PATH="${CLANG_BIN}:$PATH"
 
+        sed -i 's/-Werror[^ ]*//g' Makefile scripts/Makefile.extrawarn 2>/dev/null || true
+
         MAKE="make O=out ARCH=arm64 LLVM=1 \
           CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm \
           OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip \

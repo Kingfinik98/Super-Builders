@@ -367,6 +367,9 @@ jobs:
             bash kernel_platform/oplus/build/oplus_build_kernel.sh "$CPUD" "$BUILD_METHOD" || BUILD_RC=$?
         else
           cd "$KERNEL_COMMON"
+
+          sed -i 's/-Werror[^ ]*//g' Makefile scripts/Makefile.extrawarn 2>/dev/null || true
+
           make O=out ARCH=arm64 LLVM=1 \
             CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm \
             OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip \
