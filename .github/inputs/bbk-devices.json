@@ -1,23 +1,4 @@
 {
-  "oneplus_15_b": {
-    "brand": "oneplus",
-    "name": "OnePlus 15",
-    "soc": "sm8850",
-    "codename": "canoe",
-    "android_version": "android16",
-    "kernel_version": "6.12",
-    "build_method": "perf",
-    "manifest_repo": "OnePlusOSS/kernel_manifest",
-    "manifest_branch": "oneplus/sm8850",
-    "hmbird": true,
-    "extra_artifacts": [
-      "dtbo.img",
-      "system_dlkm.img",
-      "vendor_dlkm.img",
-      "vendor_boot.img"
-    ],
-    "manifest_file": "oneplus_15.xml"
-  },
   "oneplus_13_b": {
     "brand": "oneplus",
     "name": "OnePlus 13",
@@ -662,19 +643,6 @@
     "hmbird": false,
     "extra_artifacts": []
   },
-  "oppo_pad_3_pro_v": {
-    "brand": "oppo",
-    "name": "OPPO Pad 3 Pro",
-    "soc": "sm8650",
-    "codename": "pineapple",
-    "android_version": "android15",
-    "kernel_version": "6.1",
-    "build_method": "perf",
-    "manifest_repo": "Numbersf/Kernel_Manifest_Appendix",
-    "manifest_branch": "oppo/sm8650",
-    "hmbird": false,
-    "extra_artifacts": []
-  },
   "oppo_pad_3_pro_b": {
     "brand": "oppo",
     "name": "OPPO Pad 3 Pro",
@@ -885,19 +853,6 @@
     "soc": "sm8650",
     "codename": "pineapple",
     "android_version": "android15",
-    "kernel_version": "6.1",
-    "build_method": "perf",
-    "manifest_repo": "Numbersf/Kernel_Manifest_Appendix",
-    "manifest_branch": "realme/sm8650",
-    "hmbird": false,
-    "extra_artifacts": []
-  },
-  "realme_gt6_b": {
-    "brand": "realme",
-    "name": "Realme GT6",
-    "soc": "sm8650",
-    "codename": "pineapple",
-    "android_version": "android16",
     "kernel_version": "6.1",
     "build_method": "perf",
     "manifest_repo": "Numbersf/Kernel_Manifest_Appendix",
